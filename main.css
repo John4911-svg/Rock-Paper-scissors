@@ -1,0 +1,153 @@
+
+:root {
+  --bg-dark: #0f172a;       /* Slate 900 */
+  --card-bg: #1e293b;       /* Slate 800 */
+  --primary: #6366f1;       /* Indigo 500 */
+  --primary-hover: #4f46e5;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --win-green: #22c55e;
+  --loss-red: #ef4444;
+  
+ 
+  --radius: 12px;
+  --touch-target: 48px;     
+  --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  line-height: 1.5;
+}
+
+
+#container {
+  width: 100%;
+  max-width: 450px;
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 
+              0 8px 10px -6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+#playArea {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--primary);
+}
+
+#games1scores {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+#game1resultsArea {
+  min-height: 60px; 
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+button {
+  all: unset; 
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: var(--touch-target);
+  padding: 0 1.5rem;
+  background-color: var(--primary);
+  color: white;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: var(--transition);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Specific button styles */
+#game1resetBtn {
+  background-color: #334155;
+  width: auto;
+  margin: 1rem auto 0;
+  padding: 0 2rem;
+}
+
+#game1resetBtn:hover {
+  background-color: #475569;
+}
+
+
+
+@media (max-width: 380px) {
+  #playArea button {
+    width: 100%;
+  }
+}
+
+@media (min-width: 381px) {
+
+  .button-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .button-group button {
+    flex: 1;
+  }
+}
+
+
+@media (min-width: 640px) {
+  #container {
+    padding: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+}
+
